@@ -48,7 +48,7 @@ Notes:
 
 - [ ] Know how to read documentation with `man` (for the inquisitive, `man man` lists the section numbers, e.g. 1 is "regular" commands, 5 is files/conventions, and 8 are for administration). Find man pages with `apropos`. Know that some commands are not executables, but Bash builtins, and that you can get help on them with `help` and `help -d`.
 
-- [ ] Learn about redirection of output and input using `>` and `<` and pipes using `|`. Know `>` overwrites the output file and `>>` appends. Learn about stdout and stderr.
+- [x] Learn about redirection of output and input using `>` and `<` and pipes using `|`. Know `>` overwrites the output file and `>>` appends. Learn about stdout and stderr.
 
 - [ ] Learn about file glob expansion with `*` (and perhaps `?` and `[`...`]`) and quoting and the difference between double `"` and single `'` quotes. (See more on variable expansion below.)
 
@@ -60,7 +60,7 @@ Notes:
 
 - [ ] Basic network management: `ip` or `ifconfig`, `dig`.
 
-- [ ] Learn and use a version control management system, such as `git`.
+- [x] Learn and use a version control management system, such as `git`.
 
 - [ ] Know regular expressions well, and the various flags to `grep`/`egrep`. The `-i`, `-o`, `-v`, `-A`, `-B`, and `-C` options are worth knowing.
 
@@ -69,7 +69,7 @@ Notes:
 
 ## Everyday use
 
-- [ ] In Bash, use **Tab** to complete arguments or list all available commands and **ctrl-r** to search through command history (after pressing, type to search, press **ctrl-r** repeatedly to cycle through more matches, press **Enter** to execute the found command, or hit the right arrow to put the result in the current line to allow editing).
+- [x] In Bash, use **Tab** to complete arguments or list all available commands and **ctrl-r** to search through command history (after pressing, type to search, press **ctrl-r** repeatedly to cycle through more matches, press **Enter** to execute the found command, or hit the right arrow to put the result in the current line to allow editing).
 
 - [ ] In Bash, use **ctrl-w** to delete the last word, and **ctrl-u** to delete all the way back to the start of the line. Use **alt-b** and **alt-f** to move by word, **ctrl-a** to move cursor to beginning of line,  **ctrl-e** to move cursor to end of line, **ctrl-k** to kill to the end of the line, **ctrl-l** to clear the screen. See `man readline` for all the default keybindings in Bash. There are a lot. For example **alt-.** cycles through previous arguments, and **alt-*** expands a glob.
 
@@ -80,7 +80,7 @@ Notes:
 
 - [ ] To see recent commands, `history`. There are also many abbreviations such as `!$` (last argument) and `!!` last command, though these are often easily replaced with **ctrl-r** and **alt-.**.
 
-- [ ] Go to your home directory with `cd`. Access files relative to your home directory with the `~` prefix (e.g. `~/.bashrc`). In `sh` scripts refer to the home directory as `$HOME`.
+- [x] Go to your home directory with `cd`. Access files relative to your home directory with the `~` prefix (e.g. `~/.bashrc`). In `sh` scripts refer to the home directory as `$HOME`.
 
 - [ ] To go back to the previous working directory: `cd -`.
 
@@ -105,9 +105,9 @@ Notes:
 
 - [ ] See also `lsof` for open sockets and files.
 
-- [ ] See `uptime` or `w` to know the how long the system has been running.
+- [x] See `uptime` or `w` to know the how long the system has been running.
 
-- [ ] Use `alias` to create shortcuts for commonly used commands. For example, `alias ll='ls -latr'` creates a new alias `ll`.
+- [x] Use `alias` to create shortcuts for commonly used commands. For example, `alias ll='ls -latr'` creates a new alias `ll`.
 
 - [ ] Save aliases, shell settings, and functions you commonly use in `~/.bashrc`, and [arrange for login shells to source it](http://superuser.com/a/183980/7106). This will make your setup available in all your shell sessions.
 
@@ -139,7 +139,7 @@ Notes:
       diff /etc/hosts <(ssh somehost cat /etc/hosts)
 ```
 
-- [ ] Know about "here documents" in Bash, as in `cat <<EOF ...`.
+- [x] Know about "here documents" in Bash, as in `cat <<EOF ...`.
 
 - [ ] In Bash, redirect both standard output and standard error via: `some-command >logfile 2>&1` or `some-command &>logfile`. Often, to ensure a command does not leave an open file handle to standard input, tying it to the terminal you are in, it is also good practice to add `</dev/null`.
 
@@ -180,7 +180,7 @@ Notes:
 
 - [ ] Know about the [128K limit](https://wiki.debian.org/CommonErrorMessages/ArgumentListTooLong) on command lines. This "Argument list too long" error is common when wildcard matching large numbers of files. (When this happens alternatives like `find` and `xargs` may help.)
 
-- [ ] For a basic calculator (and of course access to Python in general), use the `python` interpreter. For example,
+- [x] For a basic calculator (and of course access to Python in general), use the `python` interpreter. For example,
 ```
 >>> 2+3
 5
@@ -199,7 +199,7 @@ Notes:
 
 - [ ] If you must handle XML, `xmlstarlet` is old but good.
 
-- [ ] For JSON, use [`jq`](http://stedolan.github.io/jq/).
+- [x] For JSON, use [`jq`](http://stedolan.github.io/jq/).
 
 - [ ] For YAML, use [`shyaml`](https://github.com/0k/shyaml).
 
@@ -211,9 +211,9 @@ Notes:
 
 - [ ] Know about `cut`, `paste`, and `join` to manipulate text files. Many people use `cut` but forget about `join`.
 
-- [ ] Know about `wc` to count newlines (`-l`), characters (`-m`), words (`-w`) and bytes (`-c`).
+- [x] Know about `wc` to count newlines (`-l`), characters (`-m`), words (`-w`) and bytes (`-c`).
 
-- [ ] Know about `tee` to copy from stdin to a file and also to stdout, as in `ls -al | tee file.txt`.
+- [x] Know about `tee` to copy from stdin to a file and also to stdout, as in `ls -al | tee file.txt`.
 
 - [ ] Know that locale affects a lot of command line tools in subtle ways, including sorting order (collation) and performance. Most Linux installations will set `LANG` or other locale variables to a local setting like US English. But be aware sorting will change if you change locale. And know i18n routines can make sort or other commands run *many times* slower. In some situations (such as the set operations or uniqueness operations below) you can safely ignore slow i18n routines entirely and use traditional byte-based sort order, using `export LC_ALL=C`.
 
@@ -264,7 +264,7 @@ mkdir empty && rsync -r --delete empty/ some-dir && rmdir some-dir
 
 - [ ] To manipulate date and time expressions, use `dateadd`, `datediff`, `strptime` etc. from [`dateutils`](http://www.fresse.org/dateutils/).
 
-- [ ] Use `zless`, `zmore`, `zcat`, and `zgrep` to operate on compressed files.
+- [x] Use `zless`, `zmore`, `zcat`, and `zgrep` to operate on compressed files.
 
 - [ ] File attributes are settable via `chattr` and offer a lower-level alternative to file permissions. For example, to protect against accidental file deletion the immutable flag:  `sudo chattr +i /critical/directory/or/file`
 
@@ -409,11 +409,11 @@ A few examples of piecing together commands:
 
 - [ ] `dd`: moving data between files or devices
 
-- [ ] `file`: identify type of a file
+- [x] `file`: identify type of a file
 
 - [ ] `tree`: display directories and subdirectories as a nesting tree; like `ls` but recursive
 
-- [ ] `stat`: file info
+- [x] `stat`: file info
 
 - [ ] `time`: execute and time a command
 
@@ -423,9 +423,9 @@ A few examples of piecing together commands:
 
 - [ ] `logrotate`: rotate, compress and mail logs.
 
-- [ ] `watch`: run a command repeatedly, showing results and/or highlighting changes
+- [x] `watch`: run a command repeatedly, showing results and/or highlighting changes
 
-- [ ] `tac`: print files in reverse
+- [x] `tac`: print files in reverse
 
 - [ ] `shuf`: random selection of lines from a file
 
@@ -437,7 +437,7 @@ A few examples of piecing together commands:
 
 - [ ] `strings`: extract text from binary files
 
-- [ ] `tr`: character translation or manipulation
+- [x] `tr`: character translation or manipulation
 
 - [ ] `iconv` or `uconv`: conversion for text encodings
 
@@ -461,7 +461,7 @@ A few examples of piecing together commands:
 
 - [ ] `mtr`: better traceroute for network debugging
 
-- [ ] `cssh`: visual concurrent shell
+- [x] `cssh`: visual concurrent shell
 
 - [ ] `rsync`: sync files and folders over SSH or in local file system
 
@@ -485,7 +485,7 @@ A few examples of piecing together commands:
 
 - [ ] `htop`: improved version of top
 
-- [ ] `last`: login history
+- [x] `last`: login history
 
 - [ ] `w`: who's logged on
 
@@ -516,7 +516,7 @@ A few examples of piecing together commands:
 
 These are items relevant *only* on OS X.
 
-- [ ] Package management with `brew` (Homebrew) and/or `port` (MacPorts). These can be used to install on OS X many of the above commands.
+- [x] Package management with `brew` (Homebrew) and/or `port` (MacPorts). These can be used to install on OS X many of the above commands.
 
 - [ ] Copy output of any command to a desktop app with `pbcopy` and paste input from one with `pbpaste`.
 
@@ -532,7 +532,7 @@ These are items relevant *only* on OS X.
 
 ## Windows only
 
-- [ ] Access the power of the Unix shell under Microsoft Windows by installing [Cygwin](https://cygwin.com/). Most of the things described in this document will work out of the box.
+- [x] Access the power of the Unix shell under Microsoft Windows by installing [Cygwin](https://cygwin.com/). Most of the things described in this document will work out of the box.
 
 - [ ] Install additional Unix programs with the Cygwin's package manager.
 
